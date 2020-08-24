@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>AccelaTest.Application</AssemblyName>
+    <RootNamespace>AccelaTest.Application</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AccelaTest.Config\AccelaTest.Config.csproj" />
+    <ProjectReference Include="..\AccelaTest.Domain\AccelaTest.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

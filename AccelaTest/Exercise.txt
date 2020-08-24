@@ -1,0 +1,37 @@
+Candidate Coding Exercise
+Coding Exercise
+Expectation is for the candidate to take approx 2-4 hrs
+
+Create a simple application in ASP.NET with database access. Application
+shall follow the MVC framework.
+
+Based on an input from the user provide the following functionality;
+
+Provide help
+1. Add Person (id, firstName, lastName)
+2. Edit Person (firstName, lastName)
+3. Delete Person (id)
+4. Add Address to person [multiple required] (id, street, city, state,
+postalCode)
+5. Edit Address (street, city, state, postalCode)
+6. Delete Address (id)
+7. Count Number of Persons
+8. List Persons
+
+Sr. Software Engineer Requirements
+1. Unit Tests
+2. Visual Studio build (.NET)
+
+Please supply the source code and instructions on how to build and run
+your application.
+Please use a data store that does not require an installation (eg. SQL
+LocalDB, SQLite, etc.).
+Please upload your code into a public GitHub repository.
+Please spend no more than 4 hrs on this.
+Please make sure this is easily executable. Using a README.md, give
+details how to run (eg. use gradlew bootRun for Java)
+
+Show us what you know, use any third-party frameworks that you think
+will help you complete the exercise while keeping it simple. Remember,
+this is your first impression with the tech leads and manager of the
+team. Impress them!

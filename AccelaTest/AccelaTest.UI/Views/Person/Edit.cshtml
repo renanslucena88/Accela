@@ -1,0 +1,90 @@
+﻿@model AccelaTest.Domain.Entities.Person
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Person</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="FirstName" class="control-label"></label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<br />
+<br />
+<h4>Address of @Model.FirstName</h4>
+<a asp-controller="Address" asp-action="Create" asp-route-id="@Model.Id">Add Address</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Street
+            </th>
+            <th>
+                City
+            </th>
+            <th>
+                model.State
+            </th>
+            <th>
+                PostalCode
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+
+
+    <tbody>
+        @foreach (var item in Model.Address)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Street)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.City)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.State)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PostalCode)
+                </td>
+                <td>
+                    <a asp-controller="Address" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-controller="Address" asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-controller="Address" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+
+</table>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
