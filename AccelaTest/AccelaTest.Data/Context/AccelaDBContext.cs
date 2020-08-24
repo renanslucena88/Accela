@@ -1,21 +1,21 @@
 ﻿using AccelaTest.Config;
 using AccelaTest.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace AccelaTest.Data.Context
 {
     public class AccelaDBContext : DbContext
     {
         #region Creating Context for the Code First
+
         //Creating Context for the Code First
-        DbContextOptions<AccelaDBContext> _connInfo = null;
+        private readonly DbContextOptions<AccelaDBContext> _connInfo = null;
+
         public AccelaDBContext(DbContextOptions<AccelaDBContext> connInfo) : base(connInfo)
         {
             _connInfo = connInfo;
         }
+
         public AccelaDBContext(string connInfo)
         {
             _connInfo = GetConnection(connInfo).Options;
@@ -28,16 +28,18 @@ namespace AccelaTest.Data.Context
             return connBuilder;
         }
 
-        #endregion
+        #endregion Creating Context for the Code First
 
         #region Singleton
 
         //Singleton
-        private static AccelaDBContext _instance = null;
+        private static readonly AccelaDBContext _instance = null;
+
         public static AccelaDBContext GetInstance
         {
-            get {
-                if (_instance==null)
+            get
+            {
+                if (_instance == null)
                 {
                     return new AccelaDBContext(ConnConfig.GetConnection());
                 }
@@ -45,8 +47,7 @@ namespace AccelaTest.Data.Context
             }
         }
 
-        #endregion
-
+        #endregion Singleton
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -59,10 +60,7 @@ namespace AccelaTest.Data.Context
         public DbSet<Person> Person { get; set; }
         public DbSet<Address> Address { get; set; }
 
-        #endregion
-
-
-
+        #endregion DBSets
 
         #region Relationship
 
@@ -86,9 +84,6 @@ namespace AccelaTest.Data.Context
                 .IsRequired(true);
         }
 
-
-        #endregion
-
-
+        #endregion Relationship
     }
 }

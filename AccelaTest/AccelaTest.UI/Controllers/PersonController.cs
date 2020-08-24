@@ -1,19 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using AccelaTest.Application.Services;
-using AccelaTest.Domain.Entities;
+﻿using AccelaTest.Domain.Entities;
 using AccelaTest.Domain.Interfaces.IServices;
 using AccelaTest.UI.Helpers;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace AccelaTest.UI.Controllers
 {
     public class PersonController : Controller
     {
-
         private IPersonService _personService;
 
         public PersonController(IPersonService personService)
@@ -59,7 +55,6 @@ namespace AccelaTest.UI.Controllers
                 {
                     return View();
                 }
-
             }
             catch
             {
@@ -92,7 +87,6 @@ namespace AccelaTest.UI.Controllers
                 {
                     return View();
                 }
-
             }
             catch
             {

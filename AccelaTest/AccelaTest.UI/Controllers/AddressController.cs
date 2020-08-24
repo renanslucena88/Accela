@@ -1,19 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using AccelaTest.Domain.Entities;
+﻿using AccelaTest.Domain.Entities;
 using AccelaTest.Domain.Interfaces.IServices;
 using AccelaTest.UI.Helpers;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace AccelaTest.UI.Controllers
 {
     public class AddressController : Controller
     {
-
-        private IAddressService _addressService;
+        private readonly IAddressService _addressService;
 
         public AddressController(IAddressService addressService)
         {
@@ -62,7 +59,7 @@ namespace AccelaTest.UI.Controllers
                     return View();
                 }
             }
-            catch(Exception ex)
+            catch
             {
                 return View();
             }
@@ -87,8 +84,7 @@ namespace AccelaTest.UI.Controllers
                 {
                     var result = _addressService.Update(model);
                     _addressService.SaveChanges();
-                    return RedirectToAction("Details", "Person",new { id = model.IdPerson });
-
+                    return RedirectToAction("Details", "Person", new { id = model.IdPerson });
                 }
                 else
                 {
@@ -108,6 +104,5 @@ namespace AccelaTest.UI.Controllers
             _addressService.SaveChanges();
             return RedirectToAction(nameof(Index));
         }
-
     }
 }

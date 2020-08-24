@@ -1,5 +1,3 @@
-using System;
-
 namespace AccelaTest.UI.Models
 {
     public class ErrorViewModel

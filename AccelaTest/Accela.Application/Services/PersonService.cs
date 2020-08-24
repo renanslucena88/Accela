@@ -1,22 +1,21 @@
-﻿using AccelaTest.Config;
-using AccelaTest.Domain.Entities;
+﻿using AccelaTest.Domain.Entities;
 using AccelaTest.Domain.Interfaces.IRepository;
 using AccelaTest.Domain.Interfaces.IServices;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System;
 using System.Collections.Generic;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
 
 namespace AccelaTest.Application.Services
 {
     public class PersonService : IPersonService
     {
         private readonly IPersonRepository _repository;
+
         public PersonService(IPersonRepository repository)
         {
             _repository = repository;
         }
+
         public PersonService(Person person)
         {
             if (string.IsNullOrEmpty(person.FirstName))
@@ -37,7 +36,7 @@ namespace AccelaTest.Application.Services
 
         public void Dispose()
         {
-             _repository.Dispose();
+            _repository.Dispose();
         }
 
         public EntityEntry<Person> Insert(Person obj)
@@ -47,7 +46,7 @@ namespace AccelaTest.Application.Services
 
         public void SaveChanges()
         {
-             _repository.SaveChanges();
+            _repository.SaveChanges();
         }
 
         public Person Select(Guid id)

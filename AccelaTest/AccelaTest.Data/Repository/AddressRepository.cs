@@ -6,13 +6,13 @@ using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace AccelaTest.Data.Repository
 {
     public class AddressRepository : IAddressRepository
     {
         private readonly AccelaDBContext context = AccelaDBContext.GetInstance;
+
         public EntityEntry<Address> Delete(Guid id)
         {
             return context.Set<Address>().Remove(Select(id));

@@ -4,13 +4,13 @@ using AccelaTest.Domain.Interfaces.IServices;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace AccelaTest.Application.Services
 {
     public class AddressService : IAddressService
     {
         private readonly IAddressRepository _repository;
+
         public AddressService(IAddressRepository repository)
         {
             _repository = repository;

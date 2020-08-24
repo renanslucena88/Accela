@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using AccelaTest.Application.Services;
 using AccelaTest.Data.Repository;
 using AccelaTest.Domain.Interfaces.IRepository;
@@ -29,11 +25,13 @@ namespace AccelaTest.UI
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
 
             #region Dependency Injection
+
             services.AddTransient<IPersonRepository, PersonRepository>();
             services.AddTransient<IPersonService, PersonService>();
             services.AddTransient<IAddressRepository, AddressRepository>();
             services.AddTransient<IAddressService, AddressService>();
-            #endregion
+
+            #endregion Dependency Injection
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

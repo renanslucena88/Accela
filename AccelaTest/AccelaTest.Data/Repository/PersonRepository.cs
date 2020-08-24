@@ -6,13 +6,13 @@ using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace AccelaTest.Data.Repository
 {
     public class PersonRepository : IPersonRepository
     {
         private readonly AccelaDBContext context = AccelaDBContext.GetInstance;
+
         public EntityEntry<Person> Delete(Guid id)
         {
             return context.Set<Person>().Remove(Select(id));
@@ -61,8 +61,7 @@ namespace AccelaTest.Data.Repository
                 context.Entry(objResult).State = EntityState.Detached;
             }
             context.Entry(obj).State = EntityState.Modified;
-            return obj ;
+            return obj;
         }
-
     }
 }

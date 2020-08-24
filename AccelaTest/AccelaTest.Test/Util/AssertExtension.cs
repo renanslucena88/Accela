@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using Xunit;
 
 namespace AccelaTest.Test.Util
@@ -9,7 +7,7 @@ namespace AccelaTest.Test.Util
     {
         public static void MessageExt(this ArgumentException ex, string message)
         {
-            if (ex.Message ==message)
+            if (ex.Message == message)
             {
                 Assert.True(true);
             }
