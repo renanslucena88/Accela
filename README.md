@@ -7,6 +7,8 @@
         "AccelaConnection":"Server=localhost;Database=AccelaTest;Trusted_Connection=True;MultipleActiveResultSets=true" },
 
 ```
+![Screenshot_1](https://user-images.githubusercontent.com/18489368/91027071-81758e00-e5f3-11ea-99b4-c28c02668b41.jpg)
+
 2 - On Package Manage Console, select Default Project = AccelaTest.Data and run the command Update-Database. The local Database will be created.
 ### WHAT I USED FOR THIS PROJECT
 
