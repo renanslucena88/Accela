@@ -1,6 +1,7 @@
 **AccelaTest Starting at 6:30 Completed at 10:00**
 
 ###HOW TO CONFIGURE
+
 1 - Change the Connection String on the appsettings.json in both projects: AccelaTest.Data and AccelaTest.UI.  My Local Sql Server have no instance and I connect using windows authentication 
 ```Json
 "ConnectionStrings": { 
