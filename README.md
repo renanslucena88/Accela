@@ -1,6 +1,6 @@
-**AccelaTest Starting at 6:30 Completed at 10:00**
 
-###HOW TO CONFIGURE
+
+###HOW TO CONFIGURE###
 
 1 - Change the Connection String on the appsettings.json in both projects: AccelaTest.Data and AccelaTest.UI.  My Local Sql Server have no instance and I connect using windows authentication 
 ```Json
@@ -16,7 +16,6 @@
 - Entity Framework Core
 - DDD
 - XUnit 
-- I tried to simulate a project using DDD. I hope you can noticed.
 - .Net Core 3.1
 - Dependency Injectio
 - SOLID Principles
